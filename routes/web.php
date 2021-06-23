@@ -16,10 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 ///ARQUIVO //@ //FUNÇAO                            ///APELIDOS PARA CHAMADA DA ROTA DENTRO DA APLICAÇÃO
-Route::middleware(LogAcessoMiddleware::class)
-    ->get('/', 'PrincipalController@principal')
+Route::get('/', 'PrincipalController@principal')
     ->name('site.index');
-    
+
 
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 
