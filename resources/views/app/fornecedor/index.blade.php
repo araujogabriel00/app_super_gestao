@@ -1,4 +1,3 @@
-<h2>dsfasdfasdfasdfasdf</h2>
 
 @dd($fornecedores){{--MOSTRAR ARRAY--}}
 

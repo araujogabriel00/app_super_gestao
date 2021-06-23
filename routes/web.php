@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\LogAcessoMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 
 ///ARQUIVO //@ //FUNÇAO                            ///APELIDOS PARA CHAMADA DA ROTA DENTRO DA APLICAÇÃO
-Route::get('/', 'PrincipalController@principal')->name('site.index');
+Route::middleware(LogAcessoMiddleware::class)
+    ->get('/', 'PrincipalController@principal')
+    ->name('site.index');
+    
 
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 
-Route::post('/contato', 'ContatoController@contato')->name('site.contato');
+Route::post('/contato', 'ContatoController@salvar')->name('site.contato');
 
 Route::get('/sobrenos', 'SobreNosController@SobreNos')->name('site.sobre-nos');
 

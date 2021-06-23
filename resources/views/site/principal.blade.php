@@ -28,9 +28,9 @@
 
         <div class="direita">
             <div class="contato">
-                @component('site.layouts._components.form_contato')
+                @component('site.layouts._components.form_contato', ['motivo_contatos' => $motivo_contatos])
                     <p>Analisaremos sua mensagem</p>
-                    <p>dfdsfasdfsdfdsfsdfd</p>
+                 
                 @endcomponent
             </div>
         </div>
